@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background: #0077b6;
+            color: white;
+            padding: 15px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 10px;
+            border: none;
+            background: #0077b6;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #023e8a;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Appointment Scheduling</h1>
+</header>
+
+<button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+<div class="container">
+    <form id="appointmentForm">
+        <h2>Book Appointment</h2>
+
+        <input type="text" id="patient" placeholder="Patient Name" required>
+        <input type="text" id="doctor" placeholder="Doctor Name" required>
+        <input type="date" id="date" required>
+        
+        <select id="time">
+            <option value="">Select Time</option>
+            <option>09:00 AM</option>
+            <option>11:00 AM</option>
+            <option>01:00 PM</option>
+            <option>03:00 PM</option>
+        </select>
+
+        <button type="submit">Book Appointment</button>
+    </form>
+</div>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+
+    document.getElementById("appointmentForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let patient = document.getElementById("patient").value;
+        let doctor = document.getElementById("doctor").value;
+        let date = document.getElementById("date").value;
+        let time = document.getElementById("time").value;
+
+        if(patient === "" || doctor === "" || date === "" || time === "") {
+            alert("Please fill all fields!");
+            return;
+        }
+
+        alert(
+            "Appointment Booked:\n\n" +
+            "Patient: " + patient + "\n" +
+            "Doctor: " + doctor + "\n" +
+            "Date: " + date + "\n" +
+            "Time: " + time
+        );
+
+        // Reset form
+        document.getElementById("appointmentForm").reset();
+    });
+</script>
+
+</body>
+</html>

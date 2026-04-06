@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background: #0077b6;
+            color: white;
+            padding: 15px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 10px;
+            border: none;
+            background: #0077b6;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #023e8a;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Patient Management</h1>
+</header>
+
+<button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+<div class="container">
+    <form id="patientForm">
+        <h2>Register Patient</h2>
+
+        <input type="text" id="name" placeholder="Enter patient name" required>
+        <input type="number" id="age" placeholder="Enter age" required>
+        <input type="text" id="condition" placeholder="Medical condition">
+
+        <button type="submit">Save Patient</button>
+    </form>
+</div>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+
+    document.getElementById("patientForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let condition = document.getElementById("condition").value;
+
+        if(name === "" || age === "") {
+            alert("Please fill all required fields!");
+            return;
+        }
+
+        alert("Patient Saved:\nName: " + name + "\nAge: " + age);
+
+        // Clear form
+        document.getElementById("patientForm").reset();
+    });
+</script>
+
+</body>
+</html>

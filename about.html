@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Hospital Management System</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background: #0077b6;
+            color: white;
+            padding: 15px;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            padding: 10px;
+            border: none;
+            background: #0077b6;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: #023e8a;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        footer {
+            margin-top: 20px;
+            background: #023e8a;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>About This System</h1>
+</header>
+
+<button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+<div class="container">
+    <div class="card">
+        <h2>Hospital Management System</h2>
+
+        <p>
+            This Hospital Management System is a web-based application designed to help hospitals
+            manage their daily operations efficiently. It simplifies the management of patients,
+            doctors, appointments, and medical records.
+        </p>
+
+        <h3>✨ Features</h3>
+        <ul>
+            <li>Patient Registration and Management</li>
+            <li>Doctor Information Management</li>
+            <li>Appointment Scheduling</li>
+            <li>Medical Records Tracking</li>
+            <li>User-friendly interface</li>
+        </ul>
+
+        <h3>🎯 Purpose</h3>
+        <p>
+            The purpose of this system is to reduce paperwork, improve organization,
+            and provide quick access to hospital data.
+        </p>
+
+        <h3>💻 Technologies Used</h3>
+        <ul>
+            <li>HTML (Structure)</li>
+            <li>CSS (Design)</li>
+            <li>JavaScript (Functionality)</li>
+        </ul>
+
+        <h3>👨‍💻 Developer</h3>
+        <p>
+            Developed as a project to demonstrate web development skills and
+            system design concepts.
+        </p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Hospital Management System</p>
+</footer>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>
